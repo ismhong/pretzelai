@@ -60,7 +60,7 @@ export default function userPython({ id }: { id: number }) {
       if (isApiKeyChecked) {
         const content = PythonPromptFormatter(fields, instruction)
         const response = await fetch(
-          "https://api.openai.com/v1/chat/completions",
+          "https://api.x.ai/v1/chat/completions",
           {
             method: "POST",
             headers: {
@@ -68,7 +68,7 @@ export default function userPython({ id }: { id: number }) {
               Authorization: `Bearer ${apiKey}`,
             },
             body: JSON.stringify({
-              model: "gpt-4-turbo-preview",
+              model: "grok-3-mini-beta",
               messages: [{ role: "user", content }],
             }),
           }
